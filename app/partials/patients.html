@@ -1,1 +1,8 @@
 <h1>___Patient View___</h1>
+<div class="container">
+  <div ng-repeat="dude in patients">
+    <h3>{{dude.last_name}}, {{dude.first_name}}</h3>
+    <p>{{dude.ailment}}</p>
+
+  </div>
+</div>
