@@ -5,7 +5,7 @@
   <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="(key, val) in doctors">
       <h4>{{val.last_name}}, {{val.first_name}}</h4>
       <p>{{val.speciality}}</p>
-      <a ng-model="selected" ng-click="showPatients()" href="">View Patients</a>
+      <input type='button' ng-model="selected" ng-click="showPatients({{key}})" value='View Patients' />
 
   </div>
 </div>
