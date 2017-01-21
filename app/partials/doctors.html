@@ -1,9 +1,21 @@
 <h1>___Doctor View___</h1>
 
+<!--  ___doctor cards___ -->
 <div class="row container">
-  <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="doc in doctors">
-    <h4>{{doc.last_name}}, {{doc.first_name}}</h4>
-    <p>{{doc.speciality}}</p>
-    <a href="">View Patients</a>
+  <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="(key, val) in doctors">
+      <h4>{{val.last_name}}, {{val.first_name}}</h4>
+      <p>{{val.speciality}}</p>
+      <a ng-model="selected" ng-click="showPatients()" href="">View Patients</a>
+
   </div>
+</div>
+<hr />
+
+<!-- ___reveal patients___ -->
+<div class="container" ng-repeat="patient in patients">
+  <div ng-if="'{{patient.doctor_id}}' === '{{selectedDoc}}'">
+  <!-- <div ng-if="'x' === 'x'"> -->
+    <h5>{{patient.first_name}}</h5>
+    <p>{{patient.doctor_id}}</p>
+  <div>
 </div>
