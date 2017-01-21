@@ -6,10 +6,10 @@ app
         $scope.doctors = info.doctors
         $scope.patients = info.patients
       })
-    $scope.selectedDoc = []
-    $scope.getPatients = function (key) {
 
-
+    $scope.showPatients = function (x) {
+      console.log(x)
+      $scope.selectedDoc = x
     }
 
   })

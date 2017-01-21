@@ -5,7 +5,7 @@
   <div class="col-md-3 col-sm-4 col-xs-6" ng-repeat="(key, val) in doctors">
       <h4>{{val.last_name}}, {{val.first_name}}</h4>
       <p>{{val.speciality}}</p>
-      <input type='button' ng-model="selected" ng-click="showPatients({{key}})" value='View Patients' />
+      <input type='button' ng-model="selected" ng-click="showPatients(key)" value='View Patients' />
 
   </div>
 </div>
@@ -13,9 +13,9 @@
 
 <!-- ___reveal patients___ -->
 <div class="container" ng-repeat="patient in patients">
-  <div ng-if="'{{patient.doctor_id}}' === '{{selectedDoc}}'">
+  <div ng-if="patient.doctor_id === selectedDoc">
   <!-- <div ng-if="'x' === 'x'"> -->
-    <h5>{{patient.first_name}}</h5>
-    <p>{{patient.doctor_id}}</p>
+    <h5>{{patient.first_name}} {{patient.last_name}}</h5>
+    <p>{{patient.ailment}}</p>
   <div>
 </div>
